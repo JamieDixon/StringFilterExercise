@@ -1,0 +1,9 @@
+C:\dev\SringFilterExercise\bin\Debug\SringFilterExercise.exe.config
+C:\dev\SringFilterExercise\bin\Debug\SringFilterExercise.exe
+C:\dev\SringFilterExercise\bin\Debug\SringFilterExercise.pdb
+C:\dev\SringFilterExercise\obj\Debug\StringFilterExercise.csprojResolveAssemblyReference.cache
+C:\dev\SringFilterExercise\obj\Debug\SringFilterExercise.exe
+C:\dev\SringFilterExercise\obj\Debug\SringFilterExercise.pdb
+C:\dev\SringFilterExercise\bin\Debug\Ninject.dll
+C:\dev\SringFilterExercise\bin\Debug\Ninject.pdb
+C:\dev\SringFilterExercise\bin\Debug\Ninject.xml

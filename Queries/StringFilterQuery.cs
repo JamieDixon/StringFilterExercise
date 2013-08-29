@@ -4,8 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    using StringFilterExercise.Queries;
-
     public class StringFilterQuery : IQuery<IList<string>, IEnumerable<string>>
     {
         /// <summary>
@@ -35,6 +33,7 @@
 
             // This is the expanded non-linq version. I've included two Linq versions below for comparison.
             // I'd use the Linq version in production code but it's sometimes nice to see it written long(er) form in a test too.
+            // I could have also looped over the 6 char words instead of all of them and output based on whether any combination makes the current word.
             foreach (var word in input)
             {
                 // Get all the right hand segments that would create a combined word + part length equal to 6.
@@ -52,16 +51,14 @@
             }
 
             /*
-             LINQ variations of the foreach above.
-             1)
-             return from word in input let possParts = lookup[6 - word.Length] from part in possParts select word + part into comb where possibleWords.Contains(comb) select comb;
+            LINQ variations of the foreach above:
+              1) return from word in input let possParts = lookup[6 - word.Length] from part in possParts select word + part into comb where possibleWords.Contains(comb) select comb;
              
-             2)
-             return input
-				.SelectMany(w => lookup[6 - w.Length], (w, y) => new { Value = w + y })
-				.Where(x => possibleWords.Contains(x.Value))
-				.Select(x => x.Value);
-             */
+              2) return input
+                          .SelectMany(w => lookup[6 - w.Length], (w, y) => new { Value = w + y })
+                          .Where(x => possibleWords.Contains(x.Value))
+                          .Select(x => x.Value);
+            */
         }
     }
 }

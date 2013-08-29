@@ -44,6 +44,25 @@
                 var result = this.stringFilterQuery.Invoke(this.sampleInput).ToList();
                 Assert.AreEqual(expected, result);
             }
+
+            [Test]
+            public void ReturnsExpectedValuesGivenReusableParts()
+            {
+                var sample = new List<string> { "al", "albums", "alvors", "aliens", "allens", "bums", "vors", "iens" };
+                
+                // We don't expect allens to be returned because its right hand portion is missing.
+                var expected = sample.Where(x => x.Length == 6 && x != "allens");
+
+                var result = this.stringFilterQuery.Invoke(sample).ToList();
+
+                Assert.AreEqual(expected, result);
+            }
+
+            [Test]
+            public void ReturnsCorrectType()
+            {
+                Assert.IsInstanceOf<IEnumerable<string>>(this.stringFilterQuery.Invoke(this.sampleInput));
+            }
         }
     }
 }

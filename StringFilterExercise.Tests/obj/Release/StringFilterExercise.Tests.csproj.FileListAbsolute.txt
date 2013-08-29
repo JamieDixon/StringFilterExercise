@@ -1,0 +1,9 @@
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\bin\Release\StringFilterExercise.Tests.dll
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\bin\Release\StringFilterExercise.Tests.pdb
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\bin\Release\nunit.framework.dll
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\bin\Release\SringFilterExercise.exe
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\bin\Release\SringFilterExercise.pdb
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\bin\Release\nunit.framework.xml
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\obj\Release\StringFilterExercise.Tests.csprojResolveAssemblyReference.cache
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\obj\Release\StringFilterExercise.Tests.dll
+C:\dev\SringFilterExercise\StringFilterExercise.Tests\obj\Release\StringFilterExercise.Tests.pdb

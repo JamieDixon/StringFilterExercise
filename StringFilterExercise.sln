@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringFilterExercise", "StringFilterExercise.csproj", "{70F78CF6-7DE9-4368-8614-FCEA7B40A501}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringFilterExercise.Tests", "StringFilterExercise.Tests\StringFilterExercise.Tests.csproj", "{78CF4C41-9ADF-41E5-8D5B-22D7B5512A36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70F78CF6-7DE9-4368-8614-FCEA7B40A501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F78CF6-7DE9-4368-8614-FCEA7B40A501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F78CF6-7DE9-4368-8614-FCEA7B40A501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F78CF6-7DE9-4368-8614-FCEA7B40A501}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CF4C41-9ADF-41E5-8D5B-22D7B5512A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CF4C41-9ADF-41E5-8D5B-22D7B5512A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CF4C41-9ADF-41E5-8D5B-22D7B5512A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CF4C41-9ADF-41E5-8D5B-22D7B5512A36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

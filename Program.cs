@@ -15,9 +15,17 @@
             // This would normally be injected via an interface.
             var stringFilter = new StringFilterQuery();
 
-            var output = stringFilter.Invoke(input);
-            output.ToList().ForEach(Console.WriteLine);
+            stringFilter.Invoke(input).ToList().ForEach(Console.WriteLine);
+            /*
+             // Quick performance test over 10,000 iterations.
+             var now = DateTime.Now;
 
+            for (var i = 0; i <= 100000; i++)
+            {
+                stringFilter.Invoke(input).ToList();
+            }
+
+            Console.WriteLine(now - DateTime.Now);*/
             Console.ReadLine();
         }
     }

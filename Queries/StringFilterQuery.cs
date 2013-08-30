@@ -1,4 +1,9 @@
-﻿namespace StringFilterExercise.Queries
+﻿/*
+ I've chosen to leave out the header and method/property/field xml comments for brevity even though stylecop is complaining.
+ These would normally all be in place with the relevant information.
+*/
+
+namespace StringFilterExercise.Queries
 {
     using System;
     using System.Collections.Generic;
@@ -6,20 +11,13 @@
 
     public class StringFilterQuery : IQuery<IList<string>, IEnumerable<string>>
     {
-        /// <summary>
-        /// The invoke.
-        /// </summary>
-        /// <param name="input">
-        /// The input.
-        /// </param>
-        /// <returns>
-        /// The <see cref="IEnumerable"/>.
-        /// </returns>
-        /// <exception cref="Exception">
-        /// </exception>
         public IEnumerable<string> Invoke(IList<string> input)
         {
+            // I've kept this method simple but I also chose include sanity checks and a minor edge case so that you know what I've considered.
+
             // Sanity check input. Would normally do this kind of thing with Code Contracts.
+            // Could have combined all 3 checks to yield break rather than raising an exception.
+            // I do like the explicit nature of raising exceptions though and in prod code would define a more useful exception type.
             if (input == null || input.Any() == false)
             {
                 throw new Exception("You must pass a non-empty, non-null parameter to the Parse method.");

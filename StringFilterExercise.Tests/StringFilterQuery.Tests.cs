@@ -7,7 +7,11 @@
     using NUnit.Framework;
 
     using StringFilterExercise.Queries;
-
+    /*
+     I've used a test class structure that I picked up from Phil Haack a while back. It imitates the BDD style Given,When,Then.
+     This makes for quite handy reading especially when you've got a mix of unit tests and integration tests (specflow tests for example).
+     The nested class per method structure gives a nice separation when testing classes with multuiple public methods (repositories etc).
+     */
     [TestFixture]
     public class Given_StringFilterQuery
     {
@@ -26,26 +30,26 @@
         public class When_Invoke_Executed : Given_StringFilterQuery
         {
             [Test]
-            public void ThrowsExceptionWithNullInput()
+            public void ThenThrowsExceptionWithNullInput()
             {
                 Assert.Throws<Exception>(() => this.stringFilterQuery.Invoke(null).ToList());
             }
 
             [Test]
-            public void ThrowsExceptionWithEmptyInput()
+            public void ThenThrowsExceptionWithEmptyInput()
             {
                 Assert.Throws<Exception>(() => this.stringFilterQuery.Invoke(Enumerable.Empty<string>().ToList()).ToList());
             }
 
             [Test]
-            public void ReturnsEmptyCollectionWhenInputCountLessThan3()
+            public void ThenReturnsEmptyCollectionWhenInputCountLessThan3()
             {
                 var result = this.stringFilterQuery.Invoke(new List<string> { "Hello", "Wold" }).ToList();
                 Assert.IsTrue(result.Count == 0);
             }
 
             [Test]
-            public void ReturnsExpectedValuesGivenSampleInput()
+            public void ThenReturnsExpectedValuesGivenSampleInput()
             {
                 var expected = new List<string> { "albums", "barely", "befoul", "convex", "hereby", "jigsaw", "tailor", "weaver" };
                 var result = this.stringFilterQuery.Invoke(this.sampleInput).ToList();
@@ -53,7 +57,7 @@
             }
 
             [Test]
-            public void ReturnsExpectedValuesGivenReusableParts()
+            public void ThenReturnsExpectedValuesGivenReusableParts()
             {
                 var sample = new List<string> { "al", "albums", "alvors", "aliens", "allens", "bums", "vors", "iens" };
 
@@ -66,13 +70,13 @@
             }
 
             [Test]
-            public void ReturnsCorrectType()
+            public void ThenReturnsCorrectType()
             {
                 Assert.IsInstanceOf<IEnumerable<string>>(this.stringFilterQuery.Invoke(this.sampleInput));
             }
 
             [Test]
-            public void WordSegmentNotAppendedToSelfToFormCombination()
+            public void ThenWordSegmentNotAppendedToSelfToFormCombination()
             {
                 var input = new List<string> { "heyhey", "hey", "ho" };
                 var result = this.stringFilterQuery.Invoke(input).ToList();
@@ -82,7 +86,7 @@
 
             // Edge case
             [Test]
-            public void DuplicateSegmentFormsValidCombination()
+            public void ThenDuplicateSegmentFormsValidCombination()
             {
                 var input = new List<string> { "heyhey", "hey", "ho", "hey" };
                 var result = this.stringFilterQuery.Invoke(input).ToList();

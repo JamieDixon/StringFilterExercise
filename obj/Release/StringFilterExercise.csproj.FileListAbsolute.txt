@@ -1,8 +1,0 @@
-C:\dev\SringFilterExercise\bin\Release\SringFilterExercise.exe.config
-C:\dev\SringFilterExercise\bin\Release\SringFilterExercise.exe
-C:\dev\SringFilterExercise\bin\Release\SringFilterExercise.pdb
-C:\dev\SringFilterExercise\bin\Release\Ninject.dll
-C:\dev\SringFilterExercise\bin\Release\Ninject.pdb
-C:\dev\SringFilterExercise\bin\Release\Ninject.xml
-C:\dev\SringFilterExercise\obj\Release\SringFilterExercise.exe
-C:\dev\SringFilterExercise\obj\Release\SringFilterExercise.pdb

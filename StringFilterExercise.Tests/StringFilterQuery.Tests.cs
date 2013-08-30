@@ -30,11 +30,18 @@
             {
                 Assert.Throws<Exception>(() => this.stringFilterQuery.Invoke(null).ToList());
             }
-            
+
             [Test]
             public void ThrowsExceptionWithEmptyInput()
             {
                 Assert.Throws<Exception>(() => this.stringFilterQuery.Invoke(Enumerable.Empty<string>().ToList()).ToList());
+            }
+
+            [Test]
+            public void ReturnsEmptyCollectionWhenInputCountLessThan3()
+            {
+                var result = this.stringFilterQuery.Invoke(new List<string> { "Hello", "Wold" }).ToList();
+                Assert.IsTrue(result.Count == 0);
             }
 
             [Test]
@@ -49,8 +56,8 @@
             public void ReturnsExpectedValuesGivenReusableParts()
             {
                 var sample = new List<string> { "al", "albums", "alvors", "aliens", "allens", "bums", "vors", "iens" };
-                
-                // We don't expect allens to be returned because its right hand portion is missing.
+
+                // We don't expect allens to be returned because its right hand portion (lens) is missing.
                 var expected = sample.Where(x => x.Length == 6 && x != "allens");
 
                 var result = this.stringFilterQuery.Invoke(sample).ToList();
@@ -62,6 +69,25 @@
             public void ReturnsCorrectType()
             {
                 Assert.IsInstanceOf<IEnumerable<string>>(this.stringFilterQuery.Invoke(this.sampleInput));
+            }
+
+            [Test]
+            public void WordSegmentNotAppendedToSelfToFormCombination()
+            {
+                var input = new List<string> { "heyhey", "hey", "ho" };
+                var result = this.stringFilterQuery.Invoke(input).ToList();
+
+                Assert.IsTrue(result.Count == 0);
+            }
+
+            // Edge case
+            [Test]
+            public void DuplicateSegmentFormsValidCombination()
+            {
+                var input = new List<string> { "heyhey", "hey", "ho", "hey" };
+                var result = this.stringFilterQuery.Invoke(input).ToList();
+
+                Assert.IsTrue(result.Count > 0);
             }
         }
     }
